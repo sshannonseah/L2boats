@@ -1,14 +1,41 @@
 import React from 'react';
-import { View, Text, Image, StatusBar, ScrollView } from 'react-native';
+import { View, Text, Image, StatusBar, ScrollView, StyleSheet } from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome6";
 
 import Boats from './component/Boat.js';
 
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 10,
+        backgroundColor: '#ffffff',
+    },
+    headerText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        backgroundColor: '#d3d3d3',
+        paddingVertical: 10,
+        marginBottom: 20,
+        borderWidth: 2,
+        borderColor: '#000',
+    },
+    headerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#4a4a4a',
+        padding: 5,
+        borderRadius: 5,
+        marginBottom: 10,
+    },
+
+});
+
 const AllBoats = () => {
       return (
-          <ScrollView>
+          <ScrollView contentContainerStyle={styles.container}>
                 <StatusBar hidden={true}/>
-                <Text style={{ marginBottom: 10 }}>
+                <Text style={styles.headerText}>
                       GetABoat - For Sale
                 </Text>
                 <Boats
